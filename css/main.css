@@ -33,7 +33,7 @@ body{
 }
 
 
-.logo {
+.logo h1{
     margin-right: auto;
     color: rgba(255, 255, 255, 0.575);
     letter-spacing: .1rem;
@@ -60,35 +60,73 @@ body{
   }
   .menu-items{
     position: fixed;
-    top: 82px;
+    top: 85px;
     width: 100%;
    
     background-color: rgba(148, 85, 34, 0.918);
     font-size: 28px;
     font-weight: bold;
     text-align: center;
-    padding: 20px 0;
+    padding: 0;
     z-index: 10;
-    transition: 2s ease-in-out;
+    
+    -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 3s; /* Safari 4.0 - 8.0 */
+    animation-name: example;
+    animation-duration: 3s;
     
   
  }
+
+ @-webkit-keyframes example {
+    from {background-color: rgba(148, 85, 34, 0);}
+    to {background-color: rgba(148, 85, 34, 0.918);}
+  }
+  @keyframes example {
+    from {background-color: rgba(148, 85, 34, 0);}
+    to {background-color: rgba(148, 85, 34, 0.918);}
+  
+  }
+  .menu-items a:first-child{
+      padding-top: 25px;
+  }
+  .menu-items a:last-child{
+    padding-bottom: 25px;
+  }
+
  .menu-items a{
      display: block; 
      color: rgba(14, 9, 1, 0.966);
      text-decoration: none;
-     padding: 5px 35px 5px 5px;
+     padding: 15px 35px 15px 5px;
      cursor: pointer !important;
+     transition: color 0.3s;
      
  }
  .menu-items a:hover{
-    color: rgba(99, 98, 96, 0.781);
-    transition: all 0.5s ease;
+    color: rgba(148, 148, 147, 0.781);
+    background-color: rgba(37, 35, 35, 0.705);
+    transition: background-color 0.3s;
+    
  }
   
  .invisible{
-     display: none;
+     
+    
+    display: none;
+
  }
+ @-webkit-keyframes invisibility {
+    from {background-color: rgba(148, 85, 34, 0.918);}
+    to {background-color: rgba(148, 85, 34, 0);}
+  }
+  @keyframes invisibility {
+    from {background-color: rgba(148, 85, 34, 0.918);}
+    to {background-color: rgba(148, 85, 34, 0);}
+    
+  }
+
+
 
   .bar-1, .bar-2, .bar-3 {
     width: 35px;
@@ -170,7 +208,7 @@ body{
     color: rgba(255, 255, 255, 0.5);
   }
   .banner-1 p {
-      width: 90%;
+      width: 100%;
       text-align: center;
       padding: 0 25px 25px 5px;
       font-size: 18px;
@@ -224,4 +262,31 @@ body{
   .button-2:hover {
     background-color: rgba(8, 4, 1, 0.856);
     color: rgba(219, 136, 68, 0.486);
+  }
+
+  @media only screen and (max-width: 768px) {
+    .banner-1 p{
+        width: 80%;
+      
+    }
+    .banner-1 h1{
+        text-align: left;
+        padding-left:20px;
+    }
+    .buttons{
+        width: 60%;
+    }
+
+  }
+
+  @media only screen and (max-width: 360px) {
+    .banner-1 h1{
+        font-size: 45px;
+        text-align: center;
+    }
+    .buttons{
+        width: 100%;
+        
+    }
+
   }
